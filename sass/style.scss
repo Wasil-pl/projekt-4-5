@@ -1,0 +1,106 @@
+/* Variables */
+
+$color-company: #fed136;
+$color-font-light: #fff;
+$color-background-darkening: #000;
+
+/* Global */
+
+body {
+    font-size: 18px;
+}
+
+/* Navigation */
+
+.navigation {
+    color: $color-font-light;
+    display: flex;
+    position: relative;
+    
+    .logo-box {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        flex: 3 1 auto;
+        margin-left: 10%;
+        
+        .logo {
+            padding: 5px;
+            font-size: 24px;
+            color: $color-company;
+        }
+    }
+    
+    .navigation-list {
+        margin-top: 60px;
+        flex: 1 1 auto;
+    }
+    
+    ul {
+        display: flex;
+        flex-direction: row;  
+        justify-content: space-around;
+        flex-wrap: wrap;
+        text-transform: uppercase;
+        margin-right: 230px;
+        
+        li {
+            list-style-type: none;
+            padding: 5px;
+            
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }       
+    }
+}
+
+/* Splash */
+
+.splash {
+    background-image: url('https://i.postimg.cc/Dwx0wYnM/Background-Image.png');
+    position: relative;
+    background-size: cover;
+    height: 100vh;
+    margin: auto;
+    background-position: center;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $color-background-darkening;
+        opacity: 55%;
+    }
+    
+    .splash-inner {
+        position: absolute; 
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: $color-font-light;
+        text-align: center;
+
+        p {
+            font-size: 40px;
+        }
+        
+        h1 {          
+            font-size: 75px;
+        }
+        
+        button {
+            background: $color-company;
+            border: 1px solid $color-company;
+            width: 240px;
+            height: 65px;
+            border-radius: 5px;
+            font-size: 18px;
+            color: $color-font-light;
+        }
+    }
+}
