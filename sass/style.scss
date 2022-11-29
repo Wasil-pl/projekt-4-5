@@ -8,6 +8,28 @@ $color-background-darkening: #000;
 
 body {
     font-size: 18px;
+    margin: auto;
+    text-align: center;
+
+    .container {
+        max-width: 940px;
+        margin: auto;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.section-title {
+    margin: 120px 0 80px;
+
+    h2 {
+        font-size: 40px;
+        text-transform: uppercase;
+    }
 }
 
 /* Navigation */
@@ -59,7 +81,7 @@ body {
 /* Splash */
 
 .splash {
-    background-image: url('https://i.postimg.cc/Dwx0wYnM/Background-Image.png');
+    background-image: url('https://i.postimg.cc/s2F5jVSw-/Background-Image.png');
     position: relative;
     background-size: cover;
     height: 100vh;
@@ -101,6 +123,20 @@ body {
             border-radius: 5px;
             font-size: 18px;
             color: $color-font-light;
+            text-transform: uppercase;
         }
     }
 }
+
+/* Services */
+
+.services .box {
+    flex: 1 1 33.333%;
+    
+    .box-text {
+        padding: 15px;
+    }
+}
+
+/* Our porfolio */
+
