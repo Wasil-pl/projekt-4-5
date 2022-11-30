@@ -11,6 +11,14 @@ $font-regular: 'Roboto Slab', serif;
 
 /* Global */
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;    
+}
+
 body {
     font-size: 18px;
     margin: auto;
@@ -87,7 +95,7 @@ section {
                 text-decoration: none;
                 color: inherit;
             }
-        }       
+        }
     }
 }
 
