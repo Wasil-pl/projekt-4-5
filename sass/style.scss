@@ -4,6 +4,7 @@ $color-company: #fed136;
 $color-font-light: #fff;
 $color-background-darkening: #000;
 $color-background-second: #f7f7f7;
+$color-background-about-us:  #e4e4e4;
 $color-background-light: #fff;
 $font-header: 'Montserrat', sans-serif;
 $font-logo: 'Great Vibes', cursive;
@@ -167,17 +168,11 @@ section {
         i {
             font-size: 40px;
             color: $color-company;
-            padding : 35px;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
             border-radius: 50%;
             border: 3px solid $color-company;
-        }
-
-        .lock {
-            padding: 35px 40px;
-        }
-
-        .laptop {
-            padding: 35px 30px;
         }
     }
 }
@@ -206,6 +201,85 @@ section {
     }
 }
 
+/* About Us */
+
+.about-us {
+
+    .text-box-left,
+        .text-box-right,
+            .picture-box {
+                height: 300px;
+
+                p {
+                    font-size: 14px;
+                }
+            }
+
+    .text-box-left {
+        flex: 0 0 33.333%;
+        padding: 10px 40px 10px 10px;
+        text-align: end;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: auto;
+    }
+
+    .text-box-right {
+        flex: 0 0 33.333%;
+        padding: 10px 10px 10px 40px;
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: auto;
+    }
+
+    .picture-box, 
+        .picture-box-last{
+            flex: 0 0 33.333%;
+            border: 5px solid $color-background-about-us;
+            border-radius: 50%;
+            max-width: 200px;
+            height: 200px;
+            margin: auto;
+            position: relative;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+
+    .picture-box::after {
+        position: absolute;
+        content:  '';
+        width: 4px;
+        height: 100px;
+        transform: translate(-50%);
+        background: $color-background-about-us;
+        left: 50%;
+        top: 103%;
+    }
+
+    .picture-box-last {
+        background: $color-company;
+        color: $color-font-light;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 200px;
+        height: 200px;
+
+
+        .text {
+            font-size: 25px;
+        }
+    }
+}
+
 /* footer */
 
 .footer {
@@ -227,18 +301,13 @@ section {
         i {
             color: $color-font-light;
             font-size: 18px;
-            padding: 12px;
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
             background: $color-background-darkening;
             border-radius: 50%;
             margin: 0 10px;
-        }
-
-        .fb-pt {
-            padding: 12px 15px;
-        }
-
-        .google {
-            padding: 12px 10px;
+            text-align: center;
         }
     }
 }
@@ -283,6 +352,70 @@ section {
         flex-direction: row;
     }
 
+    /* about us */
+
+    .about-us {
+
+        .container {
+
+            .wrapper {
+
+                div:nth-child(1){
+                    order: 1;
+                }
+                div:nth-child(2){
+                    order: 2;
+                }
+                div:nth-child(5){
+                    order: 4;
+                }
+                div:nth-child(6){
+                    order: 3;
+                }
+                div:nth-child(7){
+                    order: 5;
+                }
+                div:nth-child(8){
+                    order: 6;
+                }
+                div:nth-child(11){
+                    order: 8;
+                }
+                div:nth-child(12){
+                    order: 7;
+                }
+                div:nth-child(13){
+                    order: 9;
+                }
+                div:nth-child(14){
+                    order: 10;
+                }
+
+                flex-direction: row;
+
+                .text-box-right{
+                    flex: 0 0 50%;
+                    text-align: end;
+                    padding-left: 10px;
+                }
+
+                .text-box-left{
+                    flex: 0 0 50%;
+                    padding-right: 10px;
+                }
+                .picture-box {
+                    flex: 0 0 50%;
+                }
+
+                .empty-box {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    /* footer */
+
     .footer {
 
         .box-text {
@@ -299,6 +432,43 @@ section {
 
     .our-portfolio .box .box-picture img {
         min-width: 350px;
+    }
+}
+
+@media (max-width: 510px) {
+
+    .about-us {
+
+        .container {
+
+            .wrapper {
+                flex-direction: column;
+
+                .text-box-left, .text-box-right {
+                    text-align: center;
+                    flex: 100%;
+                    margin-top: 80px;
+                }
+                
+                .picture-box {
+                    flex: unset;
+                    margin-top: 100px;
+                    max-width: 250px;
+                    height: 250px;
+                    margin-top: 0;
+                }
+
+                .picture-box-last {
+                    width: 250px;
+                    min-height: 250px;
+                    max-width: none;
+                }
+
+                div:nth-child(1){
+                    margin-top: 0;
+                }
+            }
+        }
     }
 }
 
