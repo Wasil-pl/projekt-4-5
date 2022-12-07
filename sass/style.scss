@@ -205,34 +205,32 @@ section {
 
 .about-us {
 
-    .text-box-left,
-        .text-box-right,
-            .picture-box {
-                height: 300px;
-
-                p {
-                    font-size: 14px;
-                }
-            }
-
     .text-box-left {
         flex: 0 0 33.333%;
-        padding: 10px 40px 10px 10px;
         text-align: end;
         display: flex;
         flex-direction: column;
         justify-content: center;
         overflow: auto;
+        min-height: 300px;
+
+        p {
+            font-size: 16px;
+        }
     }
 
     .text-box-right {
         flex: 0 0 33.333%;
-        padding: 10px 10px 10px 40px;
         text-align: start;
         display: flex;
         flex-direction: column;
         justify-content: center;
         overflow: auto;
+        min-height: 300px;
+
+        p {
+            font-size: 16px;
+        }
     }
 
     .picture-box, 
@@ -257,7 +255,7 @@ section {
         position: absolute;
         content:  '';
         width: 4px;
-        height: 100px;
+        height: 100%;
         transform: translate(-50%);
         background: $color-background-about-us;
         left: 50%;
@@ -396,12 +394,10 @@ section {
                 .text-box-right{
                     flex: 0 0 50%;
                     text-align: end;
-                    padding-left: 10px;
                 }
 
                 .text-box-left{
                     flex: 0 0 50%;
-                    padding-right: 10px;
                 }
                 .picture-box {
                     flex: 0 0 50%;
@@ -456,16 +452,25 @@ section {
                     max-width: 250px;
                     height: 250px;
                     margin-top: 0;
+
+                    &::after {
+                        height: 100px;
+                    }
                 }
 
                 .picture-box-last {
                     width: 250px;
                     min-height: 250px;
                     max-width: none;
+                    margin-top: 100px;
                 }
 
                 div:nth-child(1){
                     margin-top: 0;
+                }
+
+                div:nth-child(13){
+                    display: none;
                 }
             }
         }
